@@ -61,7 +61,14 @@ $(EXEC1): $(EXEC1).o
 $(EXEC1).o: $(EXEC1).cpp
 	$(CCC) -c $(CCFLAGS) $(EXEC1).cpp -o $(EXEC1).o
 
+EXEC2=heuristic
+all:$(EXEC2)
 
+$(EXEC2): $(EXEC2).o
+	$(CCC) $(CCFLAGS) $(CCLNDIRS) -o $(EXEC2) $(EXEC2).o $(CCLNFLAGS)
+
+$(EXEC2).o: $(EXEC2).cpp
+	$(CCC) -c $(CCFLAGS) $(EXEC2).cpp -o $(EXEC2).o
 
 
 
